@@ -1,22 +1,23 @@
-#Funzione che crea una lista di n elementi e li somma
-def CreaLista():
+#Funzione che crea una lista di n elementi
+def CreaLista(n):
     list = []
-    numero = int(input("Dammi il numero di elementi della lista!!\n"))
-    for i in range(numero):
+    for i in range(n):
         elemento = int(input(f"Dammi il {i+1} numero!!\n"))
         list.append(elemento)
-    somma = sommaLista(list)
-    print(f"La somma della Lista di {numero} elementi è {somma}")
     return list
-
         
-
 #Funzione che somma tutti i valori di una lista
 def sommaLista(list):
     somma = 0
     for i in list:
         somma +=i
     return somma
+
+def somma():
+    numero = int(input("Dammi il numero di elementi della lista!!\n"))
+    list = CreaLista(numero)
+    somma = sommaLista(list)
+    print(f"La somma della Lista di {numero} elementi è {somma}")
 
 #Funzione che dice se una parola è palindroma con input dentro la funzione
 def palindromo():
@@ -33,4 +34,20 @@ def palindromo():
     
     return flag
 
-palindromo()
+#Funzione che scambia 2 elementi della lista
+def scambio():
+    numero = int(input("Dammi il numero di elementi della lista!!\n"))
+    list = CreaLista(numero)
+    print("La lista è:\t")
+    for num in range(numero):
+        print(f"list[{num+1}] = {list[num]},\t")
+    i = int(input(f"Dammi un indice da 1 a {numero}!!\n"))-1
+    j = int(input("Dammi altro indice da 1 a {numero}!!\n"))-1
+    tmp = list[i]
+    list[i] = list[j]
+    list[j] = tmp
+    print("La lista è:\t")
+    for num in range(numero):
+        print(f"list[{num}] = {list[num]},\t")
+
+scambio()
