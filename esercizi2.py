@@ -18,5 +18,19 @@ def sommaLista(list):
         somma +=i
     return somma
 
+#Funzione che dice se una parola è palindroma con input dentro la funzione
+def palindromo():
+    parola = input("Dammi una parola!!\n")
+    lun = len(parola)
+    flag = True
+    for i in range(int(lun/2)):
+        if(parola[i] != parola[lun-i-1]):
+            flag = False
+    if(flag):
+        print(f"{parola} è palindromo")
+    else:
+        print(f"{parola} non è palindromo")
+    
+    return flag
 
-CreaLista()
+palindromo()
