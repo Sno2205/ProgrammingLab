@@ -78,6 +78,7 @@ def fileToDict():
     for chiave, valore in wordDict.items():
         print(f"{chiave}: {valore}")
     my_file.close()
+    return wordDict
 
 #Funzione che preso un file e rimuove tutte le righe duplicate
 def createUnique():
@@ -94,4 +95,4 @@ def createUnique():
     my_file2.close()
 
 
-createUnique()
+fileToDict()
