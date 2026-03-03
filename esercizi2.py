@@ -1,5 +1,5 @@
-#Funzione che crea una lista di n elementi
-def CreaLista(n):
+#Funzione che crea una lista di n elementi integer
+def CreaListaInt(n):
     list = []
     for i in range(n):
         elemento = int(input(f"Dammi il {i+1} numero!!\n"))
@@ -15,7 +15,7 @@ def sommaLista(list):
 
 def somma():
     numero = int(input("Dammi il numero di elementi della lista!!\n"))
-    list = CreaLista(numero)
+    list = CreaListaInt(numero)
     somma = sommaLista(list)
     print(f"La somma della Lista di {numero} elementi è {somma}")
 
@@ -37,7 +37,7 @@ def palindromo():
 #Funzione che scambia 2 elementi della lista
 def scambio():
     numero = int(input("Dammi il numero di elementi della lista!!\n"))
-    list = CreaLista(numero)
+    list = CreaListaInt(numero)
     print("La lista è:\t")
     for num in range(numero):
         print(f"list[{num+1}] = {list[num]},\t")
@@ -50,4 +50,46 @@ def scambio():
     for num in range(numero):
         print(f"list[{num}] = {list[num]},\t")
 
-scambio()
+#Funzione che crea una lista di n elementi 
+def CreaLista(n):
+    list = []
+    for i in range(n):
+        elemento = input(f"Dammi il {i+1} elemento!!\n")
+        list.append(elemento)
+    return list
+
+
+#Funzione che controlla se 2 liste hanno almeno 1 elemento in comune
+def controlloListe():
+    numero = int(input("Dammi il numero di elementi della lista!!\n"))
+    list = CreaLista(numero)
+    numero = int(input("Dammi il numero di elementi della 2 lista!!\n"))
+    list2 = CreaLista(numero)
+    flag = False
+
+    for i in list:
+        if(i in list2):
+            flag = True
+
+    if(flag):
+        print("C'è elemento in comune")
+    else:
+        print("No elemento comune")
+    
+    return flag
+
+
+#Funzione che data una lista di interi (solo numeri da 0 a 9), restituisce il suo ononimo in italiano
+def listNumToIta():
+    my_dict = {0: 'Zero', 1: 'Uno', 2: 'Due', 3: 'Tre', 4: 'Quattro', 5: 'Cinque', 6: 'Sei', 7: 'Sette', 8: 'Otto', 9: 'Nove'}
+    numero = int(input("Dammi il numero di elementi della lista!!\n"))
+    list = CreaListaInt(numero)
+    list2 = []
+    print("La lista è:\t")
+    for i in list:
+        print(f"{i}\t")
+        list2.append(my_dict[i])
+    
+    print("La lista è:\t")
+    for i in list2:
+        print(f"{i}\t")

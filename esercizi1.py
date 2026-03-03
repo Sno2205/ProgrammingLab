@@ -103,5 +103,3 @@ def contaVocali():
             cont +=1
 
     print(f"In {parola} ci sono {cont} vocali")
-
-contaVocali()
