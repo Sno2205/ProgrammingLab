@@ -93,6 +93,3 @@ def createUnique():
 
     my_file.close()
     my_file2.close()
-
-
-fileToDict()

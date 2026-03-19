@@ -34,29 +34,28 @@ class Veicolo():
         
     def get_speed(self):
         return self.speed
-
-
-ctrl = True
-veicolo = Veicolo("Boh", "Boh", 2000)
-while ctrl:
-    print("\n=== MENU PRINCIPALE ===")
-    print("1. Saluta")
-    print("2. Mostra data e ora")
-    print("3. Calcola quadrato")
-    print("4. Esci")
-    
-    scelta = input("Scegli un'opzione (1-4): ")
-    
-    match scelta:
-        case "1":
-            veicolo.accellerare()
-        case "2":
-            veicolo.frenare()
-        case "3":
-            print(f"{veicolo.get_speed()}")
-        case "4":
-            print("Arrivederci!")
-            ctrl = False
-            
-        case _:
-            print("Opzione non valida! Scegli tra 1 e 4.")
+if __name__ == '__main__':
+    ctrl = True
+    veicolo = Veicolo("Boh", "Boh", 2000)
+    while ctrl:
+        print("\n=== MENU PRINCIPALE ===")
+        print("1. Saluta")
+        print("2. Mostra data e ora")
+        print("3. Calcola quadrato")
+        print("4. Esci")
+        
+        scelta = input("Scegli un'opzione (1-4): ")
+        
+        match scelta:
+            case "1":
+                veicolo.accellerare()
+            case "2":
+                veicolo.frenare()
+            case "3":
+                print(f"{veicolo.get_speed()}")
+            case "4":
+                print("Arrivederci!")
+                ctrl = False
+                
+            case _:
+                print("Opzione non valida! Scegli tra 1 e 4.")
