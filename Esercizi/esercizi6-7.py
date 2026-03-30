@@ -4,8 +4,8 @@ class NumericalCSVFile(CSVFile):
     def __init__(self,name):
         super().__init__(name)
         
-    def get_data(self,start,end):
-        listaShampo = super().get_data(start,end)
+    def get_data(self,*args, **kwargs):
+        listaShampo = super().get_data(*args, **kwargs)
         for shampoo in listaShampo:
             try:
                 shampoo[1] = float(shampoo[1])
@@ -15,7 +15,7 @@ class NumericalCSVFile(CSVFile):
     
 
 csv = NumericalCSVFile("shampoo_sales.csv")
-list = csv.get_data(3,4)
+list = csv.get_data(4,4)
 for item1 in list:
     for item2 in item1:
         print(f"{item2}")
