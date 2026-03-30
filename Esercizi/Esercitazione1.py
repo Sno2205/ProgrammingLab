@@ -18,7 +18,10 @@ class ExamException(Exception):
 class MovingAverage():
     def __init__(self, lun):
         if(isinstance(lun, int)):
-            self.lun = lun
+            if(lun>0):
+                self.lun = lun
+            else:
+                raise ExamException("Errore, La finestra deve essere positiva")
         else:
             raise ExamException("Errore, non è un intero")
     
@@ -47,8 +50,7 @@ class MovingAverage():
             else:
                 raise ExamException("Errore, Ci sono troppo pochi elementi nella lista")
         else:
-            raise ExamException("Errore, lista valori vuota")
-        return []
+            raise ExamException("Errore, Non è stata passata una lista")
     
 
 boh = MovingAverage(2)
