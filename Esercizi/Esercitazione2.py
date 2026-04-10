@@ -118,6 +118,6 @@ def compute_variations(lista, firstYear,lastYear):
 time_series_file = CSVTimeSeriesFile("data.csv")
 time_series = time_series_file.get_data()
 
-dizionario = compute_variations(time_series,"1949","1951")
+dizionario = compute_variations(time_series,"1949","1952")
 for chiave, valore in dizionario.items():
     print(chiave, valore)
