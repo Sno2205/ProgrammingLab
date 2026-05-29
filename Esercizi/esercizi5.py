@@ -193,8 +193,6 @@ class Triangolo(Poligono):
         else:
             return False
         
-
-print("dio cane")
 p = Poligono(6)
 print(p)
 t1 = Triangolo(1,2,3)
